@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Számítógép Konfigurátor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Számítógép Konfigurátor</h1>
+            <p>Állítsd össze saját számítógéped a kívánt alkatrészekből!</p>
+        </header>
+
+        <main>
+            <section id="component-selection">
+                <h2>Válassz Alkatrészeket</h2>
+
+                <div class="component-category" id="cpu">
+                    <h3>Processzor (CPU)</h3>
+                    <div class="components">
+            <div class="component" onclick="selectComponent('CPU', 'Intel Core i5', 50000, this)">Intel Core i5 - 50,000 Ft</div>
+            <div class="component" onclick="selectComponent('CPU', 'AMD Ryzen 5', 45000, this)">AMD Ryzen 5 - 45,000 Ft</div>
+            <div class="component" onclick="selectComponent('CPU', 'Intel Core i7', 75000, this)">Intel Core i7 - 75,000 Ft</div>
+            <div class="component" onclick="selectComponent('CPU', 'AMD Ryzen 7', 70000, this)">AMD Ryzen 7 - 70,000 Ft</div>        
+                </div>
+            </div>
+
+                <div class="component-category" id="memory">
+                    <h3>Memória</h3>
+                    <div class="components">
+            <div class="component" onclick="selectComponent('Memory', '8GB DDR4', 15000, this)">8GB DDR4 - 15,000 Ft</div>
+            <div class="component" onclick="selectComponent('Memory', '16GB DDR4', 30000, this)">16GB DDR4 - 30,000 Ft</div>
+            <div class="component" onclick="selectComponent('Memory', '32GB DDR4', 60000, this)">32GB DDR4 - 60,000 Ft</div>
+            <div class="component" onclick="selectComponent('Memory', '64GB DDR4', 120000, this)">64GB DDR4 - 120,000 Ft</div>
+                </div>
+            </div>
+
+                <div class="component-category" id="storage">
+                    <h3>Háttértár</h3>
+                    <div class="components">
+            <div class="component" onclick="selectComponent('Storage', '256GB SSD', 20000, this)">256GB SSD - 20,000 Ft</div>
+            <div class="component" onclick="selectComponent('Storage', '512GB SSD', 35000, this)">512GB SSD - 35,000 Ft</div>
+            <div class="component" onclick="selectComponent('Storage', '1TB HDD', 15000, this)">1TB HDD - 15,000 Ft</div>
+            <div class="component" onclick="selectComponent('Storage', '1TB SSD', 70000, this)">1TB SSD - 70,000 Ft</div>
+                </div>
+            </div>
+
+                <div class="component-category" id="gpu">
+                <h3>Videokártya</h3>
+                <div class="components">
+            <div class="component" onclick="selectComponent('GPU', 'NVIDIA GTX 1650', 800000, this)">NVIDIA RTX 4090 - 800,000 Ft</div>
+            <div class="component" onclick="selectComponent('GPU', 'AMD Radeon RX 580', 75000, this)">AMD Radeon RX 580 - 75,000 Ft</div>
+            <div class="component" onclick="selectComponent('GPU', 'NVIDIA RTX 3060', 150000, this)">NVIDIA RTX 3060 - 150,000 Ft</div>
+            <div class="component" onclick="selectComponent('GPU', 'AMD Radeon RX 6700 XT', 140000, this)">AMD Radeon RX 6700 XT - 140,000 Ft</div>
+                </div>
+            </div>
+            
+            </section>
+
+            <section id="selected-configuration">
+                <h2>Kiválasztott Konfiguráció</h2>
+                <ul id="config-list"></ul>
+                <div id="total-price">Összes ár: 0 Ft</div>
+                <button onclick="placeOrder()">Megrendelés</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
