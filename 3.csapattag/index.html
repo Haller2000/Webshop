@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alkatrészek Weblap</title>
+    <title>Alkatrész Katalógus - Összehasonlítás</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,23 +11,67 @@
         <h1>Alkatrész Katalógus</h1>
         <nav>
             <ul>
-                <li><a href="#fooldal">Főoldal</a></li>
+                <li><a href="#processzorok">Processzorok</a></li>
+                <li><a href="#videokartyak">Videókártyák</a></li>
+                <li><a href="#alaplapok">Alaplapok</a></li>
+                <li><a href="#ramok">RAM-ok</a></li>
+                <li><a href="#tarhelyek">Tárolók</a></li>
+                <li><a href="#tapegysegek">Tápegységek</a></li>
+                <li><a href="#hazak">Házak</a></li>
                 <li><a href="#osszehasonlitas">Összehasonlítás</a></li>
-                <li><input type="text" id="kereses" placeholder="Keresés..."></li>
             </ul>
         </nav>
     </header>
-    <main id="fooldal">
-        <section class="alkatreszek">
-            <!-- Alkatrész kártyák generálása JS-sel -->
+    <main>
+        <!-- Kategóriák Szegmensek -->
+        <section id="processzorok" class="kategoriak">
+            <h2>Processzorok</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="videokartyak" class="kategoriak">
+            <h2>Videókártyák</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="alaplapok" class="kategoriak">
+            <h2>Alaplapok</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="ramok" class="kategoriak">
+            <h2>RAM-ok</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="tarhelyek" class="kategoriak">
+            <h2>Tárolók</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="tapegysegek" class="kategoriak">
+            <h2>Tápegységek</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <section id="hazak" class="kategoriak">
+            <h2>Házak</h2>
+            <div class="alkatreszek"></div>
+        </section>
+
+        <!-- Összehasonlítás Szekció -->
+        <section id="osszehasonlitas">
+            <h2>Összehasonlítás</h2>
+            <div class="osszehasonlito-container">
+                <div class="osszehasonlitott-alkatresz" id="osszehasonlitott-1"></div>
+                <div class="osszehasonlitott-alkatresz" id="osszehasonlitott-2"></div>
+            </div>
+            <button onclick="resetComparison()">Összehasonlítás törlése</button>
         </section>
     </main>
-    <section id="osszehasonlitas">
-        <h2>Összehasonlítás</h2>
-        <div class="osszehasonlit-panel">
-            <!-- Összehasonlító panel -->
-        </div>
-    </section>
+    <footer>
+        <p>© 2024 Alkatrész Katalógus. Minden jog fenntartva.</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -43,7 +43,7 @@ function updateTotalPrice() {
 }
 
 function placeOrder() {
-    const requiredComponents = ["CPU", "Memória", "Háttértár"];
+    const requiredComponents = ["CPU", "Memory", "Storage", "MotherBoard", "GPU"];
     const missingComponents = requiredComponents.filter(type => !selectedComponents[type]);
 
     if (missingComponents.length > 0) {
