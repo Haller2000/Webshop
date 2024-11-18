@@ -37,11 +37,12 @@ function updateConfigList() {
         .join("");
 }
 
+
 function updateTotalPrice() {
     document.getElementById("total-price").textContent = `Összes ár: ${totalPrice} Ft`;
 }
 
-/*function placeOrder() {
+function placeOrder() {
     const requiredComponents = ["CPU", "Memória", "Háttértár"];
     const missingComponents = requiredComponents.filter(type => !selectedComponents[type]);
 
@@ -57,4 +58,4 @@ function updateTotalPrice() {
         updateConfigList();
         updateTotalPrice();
     }
-}*/
+}
