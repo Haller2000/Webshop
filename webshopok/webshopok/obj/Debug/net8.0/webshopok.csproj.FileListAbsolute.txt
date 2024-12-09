@@ -1,0 +1,14 @@
+C:\Users\halle\source\repos\webshopok\webshopok\bin\Debug\net8.0\webshopok.exe
+C:\Users\halle\source\repos\webshopok\webshopok\bin\Debug\net8.0\webshopok.deps.json
+C:\Users\halle\source\repos\webshopok\webshopok\bin\Debug\net8.0\webshopok.runtimeconfig.json
+C:\Users\halle\source\repos\webshopok\webshopok\bin\Debug\net8.0\webshopok.dll
+C:\Users\halle\source\repos\webshopok\webshopok\bin\Debug\net8.0\webshopok.pdb
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.AssemblyInfoInputs.cache
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.AssemblyInfo.cs
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.csproj.CoreCompileInputs.cache
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.dll
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\refint\webshopok.dll
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.pdb
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.genruntimeconfig.cache
+C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\ref\webshopok.dll
