@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alkatrészek Webshop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .compare-item.low {
+            background-color: #4caf50; /* Zöld - legolcsóbb */
+            color: white;
+        }
+
+        .compare-item.mid {
+            background-color: #ff9800; /* Narancssárga - középár */
+            color: white;
+        }
+
+        .compare-item.high {
+            background-color: #f44336; /* Piros - legdrágább */
+            color: white;
+        }
+
+        .compare-btn {
+            cursor: pointer;
+        }
+
+        .compare {
+            border: 2px solid blue;
+        }
+
+        .card {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .comparison-section {
+            margin-top: 20px;
+        }
+
+        #error-message {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Alkatrészek Webshop</h1>
+        <nav>
+            <a href="#processzorok">Processzorok</a>
+            <a href="#videokartyak">Videokártyák</a>
+            <a href="#ramok">RAM-ok</a>
+            <a href="#alaplapok">Alaplapok</a>
+            <a href="#tarolok">Tárolók</a>
+            <a href="#tapeegysegek">Tápegységek</a>
+            <a href="#hazak">Házak</a>
+        </nav>
+    </header>
+
+    <div id="content">
+        <section id="processzorok">
+            <h2>Processzorok</h2>
+            <div class="alkatreszek">
+                <div class="card" data-id="1" data-price="300" data-category="processzorok">
+                    <h3>Intel Core i7</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="2" data-price="250" data-category="processzorok">
+                    <h3>AMD Ryzen 7</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="3" data-price="400" data-category="processzorok">
+                    <h3>Intel Core i9</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="4" data-price="200" data-category="processzorok">
+                    <h3>AMD Ryzen 5</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="5" data-price="500" data-category="processzorok">
+                    <h3>Intel Xeon</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="videokartyak">
+            <h2>Videokártyák</h2>
+            <div class="alkatreszek">
+                <div class="card" data-id="6" data-price="900" data-category="videokartyak">
+                    <h3>NVIDIA RTX 3080</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="7" data-price="800" data-category="videokartyak">
+                    <h3>AMD RX 6800 XT</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="8" data-price="700" data-category="videokartyak">
+                    <h3>NVIDIA RTX 3070</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="9" data-price="600" data-category="videokartyak">
+                    <h3>AMD RX 5700 XT</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="10" data-price="1500" data-category="videokartyak">
+                    <h3>NVIDIA RTX 4090</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="ramok">
+            <h2>RAM-ok</h2>
+            <div class="alkatreszek">
+                <div class="card" data-id="11" data-price="100" data-category="ramok">
+                    <h3>Corsair Vengeance LPX 16GB</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="12" data-price="90" data-category="ramok">
+                    <h3>G.SKILL Ripjaws V 16GB</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="13" data-price="110" data-category="ramok">
+                    <h3>Kingston HyperX Fury 16GB</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="14" data-price="120" data-category="ramok">
+                    <h3>Crucial Ballistix 16GB</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+                <div class="card" data-id="15" data-price="140" data-category="ramok">
+                    <h3>ADATA XPG Z1 16GB</h3>
+                    <button class="compare-btn">Összehasonlítás</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Más kategóriák... -->
+
+        <section id="osszehasonlitas">
+            <h2>Összehasonlítás</h2>
+            <div class="comparison-section">
+                <!-- Az összehasonlítandó kártyák itt jelennek meg -->
+            </div>
+            <div id="error-message"></div> <!-- Hibás üzenet -->
+        </section>
+    </div>
+
+    <script>
+        let compareItems = [];
+        let currentCategory = null;
+
+        function toggleCompare(button) {
+            const product = button.parentElement;
+            const productId = product.getAttribute('data-id');
+            const productPrice = parseFloat(product.getAttribute('data-price'));
+            const productCategory = product.getAttribute('data-category');
+
+            // Ha már van kiválasztott kategória és az aktuális termék másik kategóriába tartozik
+            if (currentCategory && currentCategory !== productCategory) {
+                document.getElementById('error-message').innerText = 'Csak egy kategóriából választhatsz egyszerre!';
+                return;
+            } else {
+                document.getElementById('error-message').innerText = ''; // Üzenet törlése
+            }
+
+            if (compareItems.some(item => item.id === productId)) {
+                compareItems = compareItems.filter(item => item.id !== productId);
+                product.classList.remove('compare');
+            } else {
+                compareItems.push({ id: productId, price: productPrice, category: productCategory });
+                product.classList.add('compare');
+                currentCategory = productCategory; // Beállítjuk a kiválasztott kategóriát
+            }
+
+            updateComparison();
+        }
+
+        function updateComparison() {
+            const comparisonSection = document.querySelector('.comparison-section');
+            comparisonSection.innerHTML = ''; 
+
+            compareItems.forEach(item => {
+                const card = document.querySelector(`.card[data-id="${item.id}"]`);
+                const compareItem = document.createElement('div');
+                compareItem.classList.add('compare-item');
+                compareItem.setAttribute('data-price', item.price);
+                compareItem.innerHTML = `
+                    <span>${card.querySelector('h3').textContent} - $${item.price}</span>
+                    <button onclick="removeFromCompare('${item.id}')">Eltávolítás</button>
+                `;
+                comparisonSection.appendChild(compareItem);
+            });
+
+            colorItemsByPrice();
+        }
+
+        function colorItemsByPrice() {
+            const items = Array.from(document.querySelectorAll('.compare-item'));
+            const prices = items.map(item => parseFloat(item.getAttribute('data-price')));
+
+            const minPrice = Math.min(...prices);
+            const maxPrice = Math.max(...prices);
+
+            items.forEach(item => {
+                const price = parseFloat(item.getAttribute('data-price'));
+                item.classList.remove('low', 'mid', 'high');
+
+                if (price === minPrice) {
+                    item.classList.add('low');
+                } else if (price === maxPrice) {
+                    item.classList.add('high');
+                } else {
+                    item.classList.add('mid');
+                }
+            });
+        }
+
+        function removeFromCompare(productId) {
+            compareItems = compareItems.filter(item => item.id !== productId);
+            const product = document.querySelector(`.card[data-id="${productId}"]`);
+            product.classList.remove('compare');
+            updateComparison();
+        }
+
+        const compareButtons = document.querySelectorAll('.compare-btn');
+        compareButtons.forEach(button => {
+            button.addEventListener('click', () => toggleCompare(button));
+        });
+    </script>
+</body>
+</html>
