@@ -6,6 +6,10 @@ using System.Linq;
 class Program
 {
     static string filePath = "alkatreszek.txt";
+    static readonly List<string> validCategories = new List<string>
+    {
+        "cpu", "gpu", "alaplap", "számítógépház", "hdd", "ssd", "monitor", "egér", "billentyűzet", "memória"
+    };
 
     static void Main(string[] args)
     {
@@ -46,8 +50,16 @@ class Program
 
     static void BevitAlkatresz()
     {
-        Console.Write("Típus (pl. CPU, GPU): ");
-        string tipus = Console.ReadLine();
+        Console.WriteLine("Választható kategóriák: " + string.Join(", ", validCategories));
+        Console.Write("Típus: ");
+        string tipus = Console.ReadLine().ToLower();
+
+        if (!validCategories.Contains(tipus))
+        {
+            Console.WriteLine("Érvénytelen típus! Csak az előre meghatározott kategóriák használhatók.");
+            return;
+        }
+
         Console.Write("Név (pl. Intel Core i5-13600K): ");
         string nev = Console.ReadLine();
         Console.Write("Leírás (pl. 3.5GHz 14-Core): ");
@@ -60,7 +72,7 @@ class Program
         if (File.Exists(filePath))
         {
             var alkatreszek = File.ReadAllLines(filePath);
-            if (alkatreszek.Any(x => x.Split(';')[0].ToLower() == tipus.ToLower() &&
+            if (alkatreszek.Any(x => x.Split(';')[0].ToLower() == tipus &&
                                       x.Split(';')[1].ToLower() == nev.ToLower()))
             {
                 Console.WriteLine("Ez az alkatrész már létezik az adatbázisban!");
@@ -162,7 +174,7 @@ class Program
 
         var alkatreszek = File.ReadAllLines(filePath);
         var tipusStatisztika = alkatreszek
-            .Select(x => x.Split(';')[0])
+            .Select(x => x.Split(';')[0].ToLower())
             .GroupBy(t => t)
             .Select(g => new { Tipus = g.Key, Db = g.Count() });
 
@@ -175,7 +187,6 @@ class Program
 
     static void AkciosArak()
     {
-        // HELLO
         if (!File.Exists(filePath))
         {
             Console.WriteLine("Nincsenek elérhető adatok.");

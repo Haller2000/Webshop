@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\halle\\source\\repos\\webshopok\\webshopok\\webshopok.csproj",
+      "projectUniqueName": "C:\\Users\\halle\\OneDrive\\Dokumentumok\\Webshop\\webshopok\\webshopok\\webshopok.csproj",
       "projectName": "webshopok",
-      "projectPath": "C:\\Users\\halle\\source\\repos\\webshopok\\webshopok\\webshopok.csproj",
+      "projectPath": "C:\\Users\\halle\\OneDrive\\Dokumentumok\\Webshop\\webshopok\\webshopok\\webshopok.csproj",
       "packagesPath": "C:\\Users\\halle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\halle\\source\\repos\\webshopok\\webshopok\\obj\\",
+      "outputPath": "C:\\Users\\halle\\OneDrive\\Dokumentumok\\Webshop\\webshopok\\webshopok\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
