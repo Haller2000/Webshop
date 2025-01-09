@@ -1,4 +1,3 @@
-// Objektum az alkatrészek tárolására
 let selectedComponents = {};
 let totalPrice = 0;
 
@@ -7,10 +6,8 @@ function loadComponents() {
     fetch('alkatreszek.txt')
         .then(response => response.text())
         .then(data => {
-            // Parse-olás (szöveg feldolgozása)
-            const categories = parseComponents(data);
-            // Az alkatrészek kirajzolása
-            renderCategories(categories);
+            const categories = parseComponents(data); // Parse-olás (szöveg feldolgozása)
+            renderCategories(categories); // Az alkatrészek kirajzolása
         })
         .catch(err => console.error("Hiba a fájl beolvasásakor:", err));
 }
@@ -21,7 +18,7 @@ function parseComponents(data) {
     const categories = {};
 
     lines.forEach(line => {
-        const [category, name, price] = line.split('|'); // Kategória|Név|Ár
+        const [category, name, price] = line.split(';'); // Kategória|Név|Ár
         if (!categories[category]) {
             categories[category] = [];
         }
@@ -40,21 +37,32 @@ function renderCategories(categories) {
     container.innerHTML = ''; // Töröljük a meglévő elemeket
 
     Object.keys(categories).forEach(category => {
-        // Kategória blokk
         const categoryDiv = document.createElement('div');
         categoryDiv.className = 'component-category';
         categoryDiv.id = category.toLowerCase();
 
         // HTML szerkezet
+        let componentsHTML = categories[category].map(component => `
+            <div class="component" 
+                onclick="selectComponent('${category}', '${component.name}', ${component.price}, this)">
+                ${component.name} - <strong>${component.price} Ft</strong>
+            </div>
+        `).join('');
+
+        // "Nem kérek" gomb hozzáadása, ha Mouse vagy Keyboard
+        if (category === 'Mouse' || category === 'Keyboard') {
+            componentsHTML += `
+                <div class="component no-selection" 
+                    onclick="selectComponent('${category}', 'Nem kérek', 0, this)">
+                    Nem kérek
+                </div>
+            `;
+        }
+
         categoryDiv.innerHTML = `
             <h3>${category}</h3>
             <div class="components">
-                ${categories[category].map(component => `
-                    <div class="component" 
-                        onclick="selectComponent('${category}', '${component.name}', ${component.price}, this)">
-                        ${component.name} - <strong>${component.price} Ft</strong>
-                    </div>
-                `).join('')}
+                ${componentsHTML}
             </div>
         `;
         container.appendChild(categoryDiv);
@@ -69,6 +77,7 @@ function selectComponent(type, name, price, element) {
     } else {
         // Előző kijelölés eltávolítása
         deselectComponent(type);
+
         // Új alkatrész kiválasztása
         selectedComponents[type] = { name, price };
         element.classList.add("selected");
