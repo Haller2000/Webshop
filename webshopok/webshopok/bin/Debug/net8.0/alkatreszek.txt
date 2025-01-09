@@ -1,0 +1,4 @@
+CPU;Intel Core i5-13600K;3.5GHz 14-Core;111800
+cpu; Intel Core i5-13600K;3.5GHz 14-Core;111800
+gpu;gpu;svs;1034
+alaplap;alaplap;sadsfdf;105188

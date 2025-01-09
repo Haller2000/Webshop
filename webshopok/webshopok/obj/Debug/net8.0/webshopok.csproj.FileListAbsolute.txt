@@ -12,6 +12,7 @@ C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\refint\webshopo
 C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.pdb
 C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\webshopok.genruntimeconfig.cache
 C:\Users\halle\source\repos\webshopok\webshopok\obj\Debug\net8.0\ref\webshopok.dll
+<<<<<<< HEAD
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.exe
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.deps.json
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.runtimeconfig.json
@@ -27,3 +28,20 @@ C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\obj\Debug
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.pdb
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.genruntimeconfig.cache
 C:\Users\Anti\Documents\IKT(11F)\2.feladat\Webshop\webshopok\webshopok\obj\Debug\net8.0\ref\webshopok.dll
+=======
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.exe
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.deps.json
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.runtimeconfig.json
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.dll
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\bin\Debug\net8.0\webshopok.pdb
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.AssemblyInfoInputs.cache
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.AssemblyInfo.cs
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.csproj.CoreCompileInputs.cache
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.sourcelink.json
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.dll
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\refint\webshopok.dll
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.pdb
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\webshopok.genruntimeconfig.cache
+C:\Users\halle\OneDrive\Dokumentumok\Webshop\webshopok\webshopok\obj\Debug\net8.0\ref\webshopok.dll
+>>>>>>> 22f65da7020ec04286a8530aa3ca235fd20cd0b6
