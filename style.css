@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     text-align: center;
@@ -54,7 +54,7 @@ h3 {
 
 .component {
     padding: 15px;
-    width: 190px;
+    width: 140px;
     background-color: #f1f8e9;
     border: 2px solid #cfd8dc;
     border-radius: 10px;
@@ -110,4 +110,3 @@ button {
 button:hover {
     background-color: #004d40;
 }
-
