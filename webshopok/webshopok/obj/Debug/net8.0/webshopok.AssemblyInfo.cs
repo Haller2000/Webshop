@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("webshopok")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea8308a3f19bfc65e6419ef65dd2cd0c99a480c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22f65da7020ec04286a8530aa3ca235fd20cd0b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("webshopok")]
 [assembly: System.Reflection.AssemblyTitleAttribute("webshopok")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

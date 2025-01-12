@@ -8,7 +8,7 @@ class Program
     static string filePath = "alkatreszek.txt";
     static readonly List<string> validCategories = new List<string>
     {
-        "cpu", "gpu", "alaplap", "számítógépház", "hdd", "ssd", "monitor", "egér", "billentyűzet", "memória"
+        "CPU", "GPU", "ALAPLAP", "SZÁMÍTÓGÉPHÁZ", "HDD", "SSD", "MONITOR", "EGÉR", "BILLENTYŰZET", "MEMÓRIA"
     };
 
     static void Main(string[] args)
@@ -52,7 +52,7 @@ class Program
     {
         Console.WriteLine("Választható kategóriák: " + string.Join(", ", validCategories));
         Console.Write("Típus: ");
-        string tipus = Console.ReadLine().ToLower();
+        string tipus = Console.ReadLine().ToUpper();
 
         if (!validCategories.Contains(tipus))
         {
@@ -72,8 +72,8 @@ class Program
         if (File.Exists(filePath))
         {
             var alkatreszek = File.ReadAllLines(filePath);
-            if (alkatreszek.Any(x => x.Split(';')[0].ToLower() == tipus &&
-                                      x.Split(';')[1].ToLower() == nev.ToLower()))
+            if (alkatreszek.Any(x => x.Split(';')[0].ToUpper() == tipus &&
+                                      x.Split(';')[1].ToUpper() == nev.ToUpper()))
             {
                 Console.WriteLine("Ez az alkatrész már létezik az adatbázisban!");
                 return;
@@ -173,15 +173,39 @@ class Program
         }
 
         var alkatreszek = File.ReadAllLines(filePath);
+
+        
         var tipusStatisztika = alkatreszek
-            .Select(x => x.Split(';')[0].ToLower())
+            .Select(x => x.Split(';')[0].ToUpper())
             .GroupBy(t => t)
             .Select(g => new { Tipus = g.Key, Db = g.Count() });
 
-        Console.WriteLine("\nStatisztika:");
+        Console.WriteLine("\nÁltalános statisztika:");
         foreach (var tipus in tipusStatisztika)
         {
             Console.WriteLine($"{tipus.Tipus}: {tipus.Db} db");
+        }
+
+        
+        var gpuGyartok = alkatreszek
+            .Where(x => x.Split(';')[0].ToUpper() == "GPU")
+            .GroupBy(x => x.Split(';')[1].Split(' ')[0].ToUpper()) 
+            .Select(g => new { Gyarto = g.Key, Db = g.Count() });
+
+        Console.WriteLine("\nGPU statisztika gyártók szerint:");
+        foreach (var gyarto in gpuGyartok)
+        {
+            Console.WriteLine($"{gyarto.Gyarto}: {gyarto.Db} db");
+        }
+
+        var cpuGyartok = alkatreszek
+            .Where(x => x.Split(';')[0].ToUpper() == "CPU")
+            .GroupBy(x => x.Split(';')[1].Split(' ')[0].ToUpper())
+            .Select(g => new { Gyarto = g.Key, Db = g.Count() });
+        Console.WriteLine("\nCPU statisztika gyártók szerint:");
+        foreach (var gyarto in cpuGyartok)
+        {
+            Console.WriteLine($"{gyarto.Gyarto}: {gyarto.Db} db");
         }
     }
 
