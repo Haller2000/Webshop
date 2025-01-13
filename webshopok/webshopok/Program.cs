@@ -116,8 +116,7 @@ class Program
                 Console.Write("Add meg a nevet: ");
                 string nev = Console.ReadLine().ToLower();
                 var nevTalalat = alkatreszek
-                    .Where(x => x.Split(';')[1].ToLower().Contains(nev))
-                    .ToList();
+                    .Where(x => x.Split(';')[1].ToLower().Contains(nev)).ToList();
                 KiirTalalatok(nevTalalat);
                 break;
 
@@ -224,27 +223,46 @@ class Program
             return;
         }
 
+        string tipus = null;
         Console.Write("Típus szerint akarod szűkíteni? (Igen/Nem): ");
         string szures = Console.ReadLine().ToLower();
+
+        if (szures == "igen")
+        {
+            Console.Write("Add meg a típust: ");
+            tipus = Console.ReadLine().ToLower();
+        }
 
         List<string> alkatreszek = File.ReadAllLines(filePath).ToList();
         for (int i = 0; i < alkatreszek.Count; i++)
         {
             string[] adatok = alkatreszek[i].Split(';');
-            if (szures == "igen")
+
+           
+            if (!string.IsNullOrEmpty(tipus) && adatok[0].ToLower() != tipus)
             {
-                Console.Write("Add meg a típust: ");
-                string tipus = Console.ReadLine().ToLower();
-                if (adatok[0].ToLower() != tipus) continue;
+                continue;
             }
 
-            int ar = int.Parse(adatok[3]);
-            ar = ar - (ar * szazalek / 100);
-            adatok[3] = ar.ToString();
-            alkatreszek[i] = string.Join(";", adatok);
+  
+            if (int.TryParse(adatok[3], out int ar))
+            {
+                ar = ar - (ar * szazalek / 100);
+                adatok[3] = ar.ToString();
+                alkatreszek[i] = string.Join(";", adatok);
+            }
+            else
+            {
+                Console.WriteLine($"Érvénytelen ár az alábbi sorban: {alkatreszek[i]}");
+            }
         }
 
         File.WriteAllLines(filePath, alkatreszek);
-        Console.WriteLine("Akciós árak alkalmazva.");
+
+        Console.WriteLine("Az akciós árak sikeresen frissítve.");
     }
-}
+
+
+
+    }
+
